@@ -9,9 +9,9 @@ function minicheck(tests) {
 
         try {
             test();
-            console.log(`Minicheck did ${i}`);
+            console.log(`Minicheck did "${i}"`);
         } catch(err) {
-            console.log(`Minicheck failed ${i}:\n${e.stack}`);
+            console.log(`Minicheck failed "${i}":\n${err.stack}`);
         }
 
     }
@@ -43,7 +43,7 @@ function exists(value, message) {
  * @param {any} expected The expected return value
  * @param {string} message Message to throw if an error occurs
  */
-function equals(real, expected) {
+function equals(real, expected, message) {
     if(expected !== real) throw new Error(`Minicheck equals: "${expected}" != "${real}", ${message}`);
 }
 
